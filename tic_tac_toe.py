@@ -9,8 +9,6 @@ def createBoard(board):
     print("2     |   |   ")
     print(" " + board[20] + "    |  " + board[21] + "|  " + board[22])
 
-
-
 my_board = [["-", "-", "-"],
             ["-", "-", "-"],
             ["-", "-", "-"]]
