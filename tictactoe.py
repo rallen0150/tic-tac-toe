@@ -1,18 +1,17 @@
 
 # The Board code is inspired by the book to use it as a dictionary
-theBoard = {'00': ' ', '01': ' ', '02': ' ',
-            '10': ' ', '11': ' ', '12': ' ',
-            '20': ' ', '21': ' ', '22': ' '}
-
+theBoard = [[" ", " ", " "],
+            [" ", " ", " "],
+            [" ", " ", " "]]
 
 # The Board code is inspired by the book to use it as a dictionary
 def printBoard(board):
     print("   0   1   2")
-    print("0  " + board['00'] + '  | ' + board['01'] + ' | ' + board['02'])
+    print("0  " + board[0][0] + '  | ' + board[0][1] + ' | ' + board[0][2])
     print('   ---+---+---')
-    print("1  " + board['10'] + '  | ' + board['11'] + ' | ' + board['12'])
+    print("1  " + board[1][0] + '  | ' + board[1][1] + ' | ' + board[1][2])
     print('   ---+---+---')
-    print("2  " + board['20'] + '  | ' + board['21'] + ' | ' + board['22'])
+    print("2  " + board[2][0] + '  | ' + board[2][1] + ' | ' + board[2][2])
 
 player = ""
 turns = 0
@@ -22,9 +21,11 @@ while turns < 9:
     else:
         player = "O"
     printBoard(theBoard)
-    player_move = input('Player {}'.format(player) + ', Place your spot on a coordinate: ')
-    while theBoard[player_move] != ' ':
-        player_move = input("Invalid Move! Try another coordinate: ")
-    theBoard[player_move] = player
+    player_move_row = int(input('Player {}'.format(player) + ', Pick a row(0-2): '))
+    player_move_column = int(input('Pick a column(0-2): '))
+    while theBoard[player_move_row][player_move_column] != ' ':
+        player_move_row = int(input("Invalid Move! Try another row: "))
+        player_move_column = int(input('Pick a column: '))
+    theBoard[player_move_row][player_move_column] = player
     turns += 1
 printBoard(theBoard)
