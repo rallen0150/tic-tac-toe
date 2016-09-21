@@ -38,4 +38,5 @@ while turns < 9:
     printBoard(myBoard)
     playerMove(myBoard, new_player)
 
+    turns += 1
 printBoard(myBoard)
