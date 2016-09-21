@@ -1,10 +1,9 @@
 
-# The Board code is inspired by the book to use it as a dictionary
+# The Board code is inspired by the book but wanted to try it as a matrix and not a dictionary
 theBoard = [[" ", " ", " "],
             [" ", " ", " "],
             [" ", " ", " "]]
 
-# The Board code is inspired by the book to use it as a dictionary
 def printBoard(board):
     print("   0   1   2")
     print("0  " + board[0][0] + '  | ' + board[0][1] + ' | ' + board[0][2])
